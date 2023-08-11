@@ -1,0 +1,38 @@
+﻿@model Order
+
+<h2>Оформление заказа</h2>
+<p>Пожалуйста, введите данные доставки.</p>
+<div asp-validation-summary="All" class="text-danger"></div>
+<form asp-action="Checkout" method="post">
+    <div class="mb-3">
+        <label class="form-label">ФИО</label>
+        <input asp-for="Name" class="form-control" />
+    </div>
+    <h3>Адрес доставки</h3>
+    <div class="mb-3">
+        <label>Регион</label>
+        <input asp-for="Region" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label>Город</label>
+        <input asp-for="City" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label>Улица</label>
+        <input asp-for="Street" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label>Дом</label>
+        <input asp-for="House" class="form-control" />
+    </div>
+
+    <h3>Детали</h3>
+    <div class="">
+        <label class="form-check-label">
+            <input asp-for="GiftWrap" class="form-check-input" style="margin-right:0.5em;" />Требуется подарочная упаковка
+        </label>
+    </div>
+    <div class="text-center">
+        <input class="btn btn-primary" type="submit" value="Оформить заказ" />
+    </div>
+</form>
